@@ -10,9 +10,9 @@ RUN apt-get update && apt-get install -y build-essential cmake zlib1g-dev wget p
 #libhdf5-dev pkg-config liblzma-dev apt-get install libbz2-dev curl unzip
 
 RUN  wget https://github.com/kingsfordgroup/sailfish/releases/download/v0.7.6/SailfishBeta-0.7.6_Linux-x86-64.tar.gz \
-&& tar -xvf SalmonBeta-0.5.0_DebianSqueeze.tar.gz \
-&& mv SalmonBeta-0.5.0_DebianSqueeze SalmonBeta-0.5.0 \
-&& cp SalmonBeta-0.5.0/bin/salmon /usr/bin/ \
-&& cp SalmonBeta-0.5.0/lib/* /usr/bin/
+&& tar -xvf SailfishBeta-0.7.6_Linux-x86-64.tar.gz \
+&& mv SailfishBeta-0.7.6_Linux-x86-64 SailfishBeta-0.7.6 \
+&& cp SailfishBeta-0.7.6/bin/sailfish /usr/bin/ \
+&& cp SailfishBeta-0.7.6/lib/* /usr/bin/
 
-ENTRYPOINT ["salmon","-h"]
+ENTRYPOINT ["sailfish","-h"]
