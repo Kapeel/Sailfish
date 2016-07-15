@@ -101,7 +101,7 @@ chomp(my $basename = `basename $query_file`);
                  system $read2;
                  my $align_command = "$sailfish quant -i index -l $library -1 $basename.1.fq -2 $basename.2.fq -o $basename $SAILFISH_ARGS";
                  system $align_command;
-#                system("rm -rf $basename.1.fq $basename.2.fq ");
+                 system("rm -rf $basename.1.fq $basename.2.fq ");
                  }
 elsif($format eq 'SE'){
                  my $unzip_command = "gunzip -c $query_file > $basename.fq";
