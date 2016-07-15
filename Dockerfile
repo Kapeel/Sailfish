@@ -1,5 +1,5 @@
 # Sailfish 
-# VERSION               0.9.0
+# VERSION               0.9.2
 # 
 
 FROM      ubuntu:14.04.3 
