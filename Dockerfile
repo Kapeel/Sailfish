@@ -2,17 +2,18 @@
 # VERSION               0.9.2
 # 
 
-FROM      ubuntu:14.04.3 
+FROM      ubuntu:14.04.3
 MAINTAINER Kapeel Chougule
 
 LABEL Description="This image is used for running Sailfish RNA seq qauntification tool "
 RUN apt-get update && apt-get install -y build-essential git cmake curl unzip zlib1g-dev wget python libtbb-dev libjemalloc-dev libgoogle-perftools-dev \
-pkg-config libbz2-dev 
+pkg-config libbz2-dev
 #libhdf5-dev pkg-config liblzma-dev apt-get install libbz2-dev curl unzip
-RUN  git clone https://github.com/kingsfordgroup/sailfish.git \
-&& wget https://github.com/Kapeel/Sailfish/blob/master/Sailfish_align.pl . \
-&& chmod +x Sailfish_align.pl
-&& mv Sailfish_align.pl /usr/bin/ \
+ADD Sailfish_align.pl /usr/bin/
+ADD Sailfish_align_with_gz.pl /usr/bi/
+RUN [ "chmod", "+x",  "/usr/bin/Sailfish_align.pl" ]
+RUN [ "chmod", "+x",  "/usr/bin/Sailfish_align_with_gz.pl" ] \
+&& git clone https://github.com/kingsfordgroup/sailfish.git \
 && cd sailfish \
 && mkdir build \
 && cd build \
