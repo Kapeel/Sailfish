@@ -18,5 +18,6 @@ RUN  git clone https://github.com/kingsfordgroup/sailfish.git \
 && make install \
 && export PATH=$PATH:/root/sailfish/bin \
 && export PATH=$PATH:/root/sailfish/bin \
+&& set +o posix
 
 ENTRYPOINT ["sailfish","-h"]
