@@ -11,6 +11,7 @@ pkg-config libbz2-dev
 #libhdf5-dev pkg-config liblzma-dev apt-get install libbz2-dev curl unzip
 RUN  git clone https://github.com/kingsfordgroup/sailfish.git \
 && wget https://github.com/Kapeel/Sailfish/blob/master/Sailfish_align.pl . \
+&& chmod +x Sailfish_align.pl
 && mv Sailfish_align.pl /usr/bin/ \
 && cd sailfish \
 && mkdir build \
